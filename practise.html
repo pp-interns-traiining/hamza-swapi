@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+
+  <div ng-app="myApp" ng-controller="myCtrl">
+
+  </div>
+  <script>
+  let app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+  $http
+    .get('https://swapi.co/api/people?callback=foo')
+    .then(function(response) {
+      console.log(response.data);
+    });
+});
+//     function getDetail(url) {
+//       fetch(url).then(function(response) {
+//     showDetail(response.data);
+//   })
+// };
+//     function showDetail(data) {
+//       if (data.next) {
+//         getDetail(data.next);
+//       } else {
+//         console.log(data);
+//       }
+//     }
+//   getDetail("https://swapi.co/api/people");
+</script>
+</body>
+
+</html>

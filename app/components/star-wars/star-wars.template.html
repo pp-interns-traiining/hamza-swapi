@@ -1,0 +1,19 @@
+<!--Template partial-->
+<div>
+  <button ng-click="$ctrl.ageInfo()">ageinfo</button>
+  <button ng-click="$ctrl.getInfo()">getinfo</button>
+  <button ng-click="$ctrl.sortBirth()">sortbirth</button>
+
+  <button ng-click="$ctrl.sum()">Click here</button>
+
+  <h1>{{$ctrl.ageResult}}</h1>
+
+
+  <input type="text" ng-model="StarWarsCtrl">
+    <ul>
+      <h1>Search characters...</h1>
+      <li ng-repeat="result in $ctrl.results | filter:StarWarsCtrl">
+        {{result.name}}
+      </li>
+    </ul>
+  </div>
